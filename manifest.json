@@ -1,0 +1,19 @@
+{
+  "name": "New Tab Notes",
+  "version": "0.01",
+  "description": "Notes when you open a new tab",
+  "background":{
+    "page": "background.html",
+    "persistent": false
+  },
+  "browser_action":{
+    "default_popup": "newtab.html",
+  "default_icon": "logo.png"
+},
+"icons":{
+    "128":"logo.png"
+},
+"permissions":["activeTab"],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
+}
