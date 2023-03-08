@@ -1,7 +1,7 @@
 {
-  "name": "New Tab Notes",
+  "name": "SnypUp",
   "version": "0.01",
-  "description": "Notes when you open a new tab",
+  "description": "Code Snippets",
   "background":{
     "page": "background.html",
     "persistent": false
