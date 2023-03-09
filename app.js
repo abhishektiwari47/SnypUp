@@ -144,14 +144,14 @@ function listenForClicks(){
 
 
 const placeholderText = ["Untitled Code","Binary Search", "Kadane's Algorithm", "Selection Sort"];
-const placeholderCode = [`Type or paste your code snippet here...`,
-`Save Binary Search function for future...
-`,
-`
-function kadanesAlgorithm(array){..........}
-`,
-`void selectionSort(int arr[], int n){...........}`
-];
+// const placeholderCode = [`Type or paste your code snippet here...`,
+// `Save Binary Search function for future...
+// `,
+// `
+// function kadanesAlgorithm(array){..........}
+// `,
+// `void selectionSort(int arr[], int n){...........}`
+// ];
 let currentLine = 0;
 let currentChar = 0;
 
@@ -186,38 +186,38 @@ function erasePlaceholder() {
 typePlaceholder();
 
 
-let currentLine2 = 0;
-let currentChar2 = 0;
-function typePlaceholder2() {
-  if (currentChar2 < placeholderCode[currentLine2].length) {
+// let currentLine2 = 0;
+// let currentChar2 = 0;
+// function typePlaceholder2() {
+//   if (currentChar2 < placeholderCode[currentLine2].length) {
  
-    const currentPlaceholder2 = document.getElementById('code').getAttribute('placeholder');
+//     const currentPlaceholder2 = document.getElementById('code').getAttribute('placeholder');
     
   
-    const nextChar2 = placeholderCode[currentLine2][currentChar2];
-    document.getElementById('code').setAttribute('placeholder', currentPlaceholder2 + nextChar2);
-    currentChar2++;
-    setTimeout(typePlaceholder2,50); // Delay between each character in milliseconds
-  } else {
-    setTimeout(erasePlaceholder2, 3000); // Delay before erasing placeholder in milliseconds
-  }
-}
+//     const nextChar2 = placeholderCode[currentLine2][currentChar2];
+//     document.getElementById('code').setAttribute('placeholder', currentPlaceholder2 + nextChar2);
+//     currentChar2++;
+//     setTimeout(typePlaceholder2,50); // Delay between each character in milliseconds
+//   } else {
+//     setTimeout(erasePlaceholder2, 3000); // Delay before erasing placeholder in milliseconds
+//   }
+// }
 
-function erasePlaceholder2() {
-  if (document.getElementById('code').getAttribute('placeholder').length > 0) {
+// function erasePlaceholder2() {
+//   if (document.getElementById('code').getAttribute('placeholder').length > 0) {
     
-    const currentPlaceholder2 = document.getElementById('code').getAttribute('placeholder');
+//     const currentPlaceholder2 = document.getElementById('code').getAttribute('placeholder');
    
-    document.getElementById('code').setAttribute('placeholder', currentPlaceholder2.slice(0, -1));
-    setTimeout(erasePlaceholder2, 40); // Delay between each character in milliseconds
-  } else {
-    currentChar2 = 0;
-    currentLine2 = (currentLine2 + 1) % placeholderCode.length;
-    setTimeout(typePlaceholder2, 1000); // Delay before typing next line in milliseconds
-  }
-}
+//     document.getElementById('code').setAttribute('placeholder', currentPlaceholder2.slice(0, -1));
+//     setTimeout(erasePlaceholder2, 40); // Delay between each character in milliseconds
+//   } else {
+//     currentChar2 = 0;
+//     currentLine2 = (currentLine2 + 1) % placeholderCode.length;
+//     setTimeout(typePlaceholder2, 1000); // Delay before typing next line in milliseconds
+//   }
+// }
 
-typePlaceholder2();
+// typePlaceholder2();
 
 
 
