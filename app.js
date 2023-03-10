@@ -44,6 +44,7 @@ function changePage(noteId){
   for(var i = 0; i < lis.length; i++){
     try{
       lis[i].classList.remove('active');
+      document.querySelector('.newNote').classList.remove('active');
     }catch(e){//...
     }
   }
@@ -61,6 +62,8 @@ function savePage(id, title, icon, body){
 
 //Set click eventListeners  (only called once per page)
 document.querySelector('.newNote').addEventListener('click', function(){
+  document.querySelector('.newNote').classList.add('active');
+  
   clearNote();
 });
 document.querySelector('.deletePage').addEventListener('click', function(){
@@ -88,8 +91,14 @@ document.querySelector('.savePage').addEventListener('click', function(){
   var icon = document.querySelector('.holder .icon').innerText;
   var id = document.querySelector('.holder h1').dataset.noteid;
   savePage(id, title, icon, body);
+  document.querySelector('.newNote').classList.remove('active');
 });
 
+
+
+
+
+//Save function
 function savePage(id, title, icon, body){
   if(!title){
     alert('Please enter a title!');
@@ -116,6 +125,37 @@ function savePage(id, title, icon, body){
     }
     fetchNotes();
   });
+}
+
+
+//Copy code to clipboard
+document.querySelector('.copyPage').addEventListener('click', function(){
+  var body = document.querySelector('.holder .post-body').innerText;
+  copyPage(body);
+});
+
+function copyPage(body){
+  // create a temporary element to hold the text to be copied
+  console.log(body);
+  var tempEl = document.createElement('div');
+  tempEl.innerText = body;
+  document.body.appendChild(tempEl);
+
+  // use the Clipboard API to copy the text to the clipboard
+  navigator.clipboard.writeText(tempEl.innerText)
+    .then(() => {
+      console.log('Text copied to clipboard');
+    })
+    .catch(err => {
+      console.error('Failed to copy text: ', err);
+    })
+    .finally(() => {
+      // remove the temporary element
+      document.body.removeChild(tempEl);
+      alert("Copied To ClipBoard");
+      
+
+    });
 }
 
 
