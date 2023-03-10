@@ -15,5 +15,6 @@
 },
 "permissions":["activeTab"],
   "manifest_version": 2,
-  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com https://new-tab-notes-a9d79-default-rtdb.asia-southeast1.firebasedatabase.app; object-src 'self'"
+
 }
